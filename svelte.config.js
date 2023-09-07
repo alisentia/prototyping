@@ -19,7 +19,7 @@ const config = {
 			pages : "docs",
 		}),
         paths: {
-            base : dev ? '' : process.env.BASE_PATH,
+            base: process.env.NODE_ENV === 'production' ? '/prototyping' : '',
         },
 	},
 };
