@@ -197,7 +197,7 @@
 	}
 
 	.sidebar {
-		background-color: rgba(255,255,255,0.99);
+		background-color: white;
 		border-right: 2px solid lightgrey;
 		height: 100%;
 		left: 0;
