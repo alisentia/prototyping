@@ -4,6 +4,6 @@
 </script>
 
 <div>
-	<!-- <video src={video} controls={true} />
-	<Button>hello</Button> -->
+	<video src={video} controls={true} style="width: 80%;" />
+	<Button>hello</Button>
 </div>
