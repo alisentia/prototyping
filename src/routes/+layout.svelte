@@ -4,6 +4,7 @@
 	import MdMenu from 'svelte-icons/md/MdMenu.svelte'
 	import MdClose from 'svelte-icons/md/MdClose.svelte'
 	import { Accordion } from '@svelteuidev/core';
+	import FaRegUser from 'svelte-icons/fa/FaRegUser.svelte'
 
 	type AccordionMap = {
 		links : {
@@ -43,7 +44,7 @@
 		{
 			links : [
 				{
-					href : "mediaPlayer",
+					href : "mediaplayer",
 					label : "home",
 				},
 			],
@@ -102,22 +103,35 @@
 </script>
 
 <div class="app">
-	<div class="header">
+	<!-- <div class="header">
 		<div class="menu" on:click={() => showMenu = !showMenu} tabindex="1" role="button">
 			<div style="display: flex; height: 3em; justify-content: center; align-items: center;">
 				<Burger size="lg" opened={showMenu} />
 			</div>
 			<div class="text">Menu</div>
 		</div>
-		<nav>
-			<a href="{base}/">Home</a>
-			<a href="{base}/test">Test</a>
-		</nav>
-	</div>
+		<div>
+			Some page name change (store???)
+		</div>
+	</div> -->
+	<aside class="vertical-sidebar">
+		<div class="menu" on:click={() => showMenu = !showMenu} tabindex="1" role="button">
+			<div style="display: flex; height: 3em; justify-content: center; align-items: center;">
+				<Burger size="lg" opened={showMenu} />
+			</div>
+			<div class="text">Menu</div>
+		</div>
+		<div class="menu">
+			<div style="display: flex; height: 2em; padding-bottom: 0.5em; justify-content: center; align-items: center;">
+				<FaRegUser size="lg" />
+			</div>
+			<div class="text">Profile</div>
+		</div>
+	</aside>
 	<main>
 		<slot />
 	</main>
-	<aside class="sidebar" class:show={showMenu}>
+	<aside class="navigator" class:show={showMenu}>
 		<div style="border-bottom: 2px solid black; display: flex; justify-content: center; align-items: center; padding: 1em;">
 			<div style="cursor: pointer; text-align: center;" on:click={() => showMenu = false}>
 				<div style="display: flex; height: 2em; justify-content: center; align-items: center;">
@@ -148,35 +162,52 @@
 	/* :global(body) {
 		margin: 0;		
 	} */
+	.app {
+		display: flex;
+		height: 100%;
+	}
+	.vertical-sidebar {
+		border-right: 3px solid lightgrey;
+		align-content: center;
+		display: flex;
+		flex-direction: column;
+		& .menu {
+			cursor: pointer;
+			text-align: center;
+			margin: 1em;
+			transition-property: transform;
+			transition-duration: 0.2s;
+			&:hover {
+				transform: scale(1.2);
+			}
+		}
+	}
 	a.accordion {
 		display: block;
 		text-align: center;
 		padding: 0.25em;
 	}
-	.menu {
+	/* .menu {
+		align-content: center;
 		display: grid;
 		flex-direction: column;
-		height: 100%;
-		max-height: 100%;
-		flex-shrink: 1;
 		margin-right: 3em;
 		cursor: pointer;
-		height: 100%;
 		text-align: center;
-		/* transform: scale(1.2); */
+		justify-content: center;
 		transition-property: transform;
 		transition-duration: 0.2s;
 		&:hover {
 			transform: scale(1.2);
 		}
-	}
+	} */
 	.text {
 		font-size: 0.9em;
 		font-weight: bold;
 		text-transform: uppercase;
 	}
 	.header {
-		align-items: stretch;
+		align-items: center;
 		border-bottom: 3px solid black;
 		box-sizing: border-box;
 		display: flex;
@@ -187,16 +218,7 @@
 		& > * {
 		}
 	}
-	nav  {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		& a {
-			padding: 5px;
-		}
-	}
-
-	.sidebar {
+	.navigator {
 		background-color: white;
 		border-right: 2px solid lightgrey;
 		height: 100%;
