@@ -103,17 +103,7 @@
 </script>
 
 <div class="app">
-	<!-- <div class="header">
-		<div class="menu" on:click={() => showMenu = !showMenu} tabindex="1" role="button">
-			<div style="display: flex; height: 3em; justify-content: center; align-items: center;">
-				<Burger size="lg" opened={showMenu} />
-			</div>
-			<div class="text">Menu</div>
-		</div>
-		<div>
-			Some page name change (store???)
-		</div>
-	</div> -->
+	<!-- Vertical sidebar -->
 	<aside class="vertical-sidebar">
 		<div class="menu" on:click={() => showMenu = !showMenu} tabindex="1" role="button">
 			<div style="display: flex; height: 3em; justify-content: center; align-items: center;">
@@ -128,9 +118,11 @@
 			<div class="text">Profile</div>
 		</div>
 	</aside>
-	<main>
+	<!-- Main -->
+	<main style="overflow: hidden; flex-grow: 1; height: 100%;">
 		<slot />
 	</main>
+	<!-- Routing menu -->
 	<aside class="navigator" class:show={showMenu}>
 		<div style="border-bottom: 2px solid black; display: flex; justify-content: center; align-items: center; padding: 1em;">
 			<div style="cursor: pointer; text-align: center;" on:click={() => showMenu = false}>
@@ -173,50 +165,26 @@
 		flex-direction: column;
 		& .menu {
 			cursor: pointer;
-			text-align: center;
+			height: 3em;
 			margin: 1em;
+			text-align: center;
 			transition-property: transform;
 			transition-duration: 0.2s;
 			&:hover {
 				transform: scale(1.2);
 			}
+			& .text {
+				font-size: 0.9em;
+				font-weight: bold;
+				text-transform: uppercase;
+			}
 		}
 	}
 	a.accordion {
 		display: block;
-		text-align: center;
+		/* text-align: center; */
 		padding: 0.25em;
-	}
-	/* .menu {
-		align-content: center;
-		display: grid;
-		flex-direction: column;
-		margin-right: 3em;
-		cursor: pointer;
-		text-align: center;
-		justify-content: center;
-		transition-property: transform;
-		transition-duration: 0.2s;
-		&:hover {
-			transform: scale(1.2);
-		}
-	} */
-	.text {
-		font-size: 0.9em;
-		font-weight: bold;
-		text-transform: uppercase;
-	}
-	.header {
-		align-items: center;
-		border-bottom: 3px solid black;
-		box-sizing: border-box;
-		display: flex;
-		padding-left: 1em;
-		padding-right: 1em;
-		padding-bottom: 1em;
-		width: 100%;
-		& > * {
-		}
+		padding-left: 2.25em;
 	}
 	.navigator {
 		background-color: white;
