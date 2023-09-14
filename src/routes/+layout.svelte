@@ -6,6 +6,7 @@
 	import { Accordion } from '@svelteuidev/core';
 	import FaRegUser from 'svelte-icons/fa/FaRegUser.svelte'
 
+	let asdf ;
 	type AccordionMap = {
 		links : {
 			href : string,
@@ -16,7 +17,7 @@
 	}
 
 	let showMenu = false;
-	let accordions = [
+	let accordions : AccordionMap[] = [
 		{
 			links : [
 				{
@@ -105,7 +106,7 @@
 <div class="app">
 	<!-- Vertical sidebar -->
 	<aside class="vertical-sidebar">
-		<div class="menu" on:click={() => showMenu = !showMenu} tabindex="1" role="button">
+		<div class="menu" on:click={() => showMenu = !showMenu} tabindex="1">
 			<div style="display: flex; height: 3em; justify-content: center; align-items: center;">
 				<Burger size="lg" opened={showMenu} />
 			</div>
@@ -119,7 +120,7 @@
 		</div>
 	</aside>
 	<!-- Main -->
-	<main style="overflow: hidden; flex-grow: 1; height: 100%;">
+	<main style="overflow-x: hidden; flex-grow: 1; height: 100%;">
 		<slot />
 	</main>
 	<!-- Routing menu -->
@@ -151,9 +152,6 @@
 </div>
 
 <style>
-	/* :global(body) {
-		margin: 0;		
-	} */
 	.app {
 		display: flex;
 		height: 100%;

@@ -1,15 +1,17 @@
 <script lang="ts">
 	import {Button} from "@svelteuidev/core";
-	import video from "$lib/videos/video.mp4";
+	import video from '$lib/videos/video.mp4';
 
 	import Search from "./Search.svelte";
+	import Video from "./Video.svelte";
 
 	let offset = false;
 	let hasVideo = false
 
-	function PROCESS_DATA (event) {
-		console.log(event.detail);
+	function PROCESS_DATA (event : CustomEvent<string>) {
+		console.log(event);
 		hasVideo = true;
+		offset = true;
 	}
 </script>
 
@@ -22,8 +24,7 @@
 		<Search on:found={PROCESS_DATA} />
 	</div>
 	<div style="position: absolute; left: 100%; top: 0; height: 100%; width: 100%;">
-		<video src={video} controls={true} style="width: 80%;" />
-		<Button on:click={() => {offset = false}}>go back</Button>
+		<Video on:back={() => offset = false} />
 	</div>
 </div>
 

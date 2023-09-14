@@ -6,7 +6,7 @@ module.exports = {
 	"extends" : [
 		"eslint:recommended",
 		"plugin:@typescript-eslint/recommended",
-		'plugin:svelte/recommended',
+		"plugin:svelte/recommended",
 	],
 	"parser" : "@typescript-eslint/parser",
 	"parserOptions" : {
@@ -54,6 +54,7 @@ module.exports = {
 			"always",
 		],
 		"no-undef" : "error",
+		'svelte/valid-compile': ['error', {ignoreWarnings: true}],
 	},
 	"overrides" : [
 		{
@@ -63,11 +64,11 @@ module.exports = {
 			},
 		},
 		{
-			files: ['*.svelte'],
-			parser: 'svelte-eslint-parser',
-			parserOptions: {
-				parser: '@typescript-eslint/parser'
-			}
+			files : ["*.svelte"],
+			parser : "svelte-eslint-parser",
+			parserOptions : {
+				parser : "@typescript-eslint/parser",
+			},
 		},
 	],
 };
