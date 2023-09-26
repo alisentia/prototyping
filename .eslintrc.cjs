@@ -54,7 +54,7 @@ module.exports = {
 			"always",
 		],
 		"no-undef" : "error",
-		'svelte/valid-compile': ['error', {ignoreWarnings: true}],
+		"svelte/valid-compile" : ["error", {ignoreWarnings : true}],
 	},
 	"overrides" : [
 		{
