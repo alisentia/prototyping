@@ -1,74 +1,29 @@
 module.exports = {
-	"env" : {
-		"es2021" : true,
-		"node" : true,
-	},
-	"extends" : [
-		"eslint:recommended",
-		"plugin:@typescript-eslint/recommended",
-		"plugin:svelte/recommended",
+	root: true,
+	extends: [
+		'eslint:recommended',
+		'plugin:@typescript-eslint/recommended',
+		'plugin:svelte/recommended'
 	],
-	"parser" : "@typescript-eslint/parser",
-	"parserOptions" : {
-		"ecmaVersion" : 13,
-		"sourceType" : "module",
+	parser: '@typescript-eslint/parser',
+	plugins: ['@typescript-eslint'],
+	parserOptions: {
+		sourceType: 'module',
+		ecmaVersion: 2020,
+		extraFileExtensions: ['.svelte']
 	},
-	"plugins" : [
-		"@typescript-eslint",
-	],
-	"rules" : {
-		"@typescript-eslint/no-this-alias" : "off",
-		"@typescript-eslint/explicit-module-boundary-types" : "off",
-		"@typescript-eslint/type-annotation-spacing" : [
-			"error",
-			{
-				"before" : true,
-			},
-		],
-		"comma-dangle" : ["error", "always-multiline"],
-		"eol-last" : ["error", "always"],
-		"key-spacing" : ["error", { "beforeColon" : true }],
-		"indent" : [
-			"error",
-			"tab",
-			{
-				"SwitchCase" : 1,
-			},
-		],
-		"linebreak-style" : [
-			"error",
-			"unix",
-		],
-		"no-inner-declarations" : "off",
-		"no-trailing-spaces" : "error",
-		"quotes" : [
-			"error",
-			"double",
-			{
-				"allowTemplateLiterals" : true,
-				"avoidEscape" : true,
-			},
-		],
-		"semi" : [
-			"error",
-			"always",
-		],
-		"no-undef" : "error",
-		"svelte/valid-compile" : ["error", {ignoreWarnings : true}],
+	env: {
+		browser: true,
+		es2017: true,
+		node: true
 	},
-	"overrides" : [
+	overrides: [
 		{
-			"files" : ["*.ts"],
-			"rules" : {
-				"no-undef" : "off",
-			},
-		},
-		{
-			files : ["*.svelte"],
-			parser : "svelte-eslint-parser",
-			parserOptions : {
-				parser : "@typescript-eslint/parser",
-			},
-		},
-	],
+			files: ['*.svelte'],
+			parser: 'svelte-eslint-parser',
+			parserOptions: {
+				parser: '@typescript-eslint/parser'
+			}
+		}
+	]
 };
