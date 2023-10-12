@@ -36,41 +36,36 @@
 </script>
 
 
-<Tabs bind:active on:change={onActiveChange}>
-    <Tabs.Tab label="Summary ID" tabKey="s">
-		<div class="content">
-			Summary ID
-			<input bind:value={summary_id} type="text" />
-		</div>
-	</Tabs.Tab>
-    <Tabs.Tab label="Time" tabKey="t">
-		<div class="content">
-			<table>
-				<thead>
-					<th>Start Time</th>
-					<th></th>
-					<th>End Time</th>
-				</thead>
-				<tbody>
-					<tr>
-						<td>
-							<input bind:value={start.date} type="date" />
-							<input bind:value={start.time} type="time" />
-						</td>
-						<td><Button on:click={COPY}>Copy</Button></td>
-						<td>
-							<input bind:value={end.date} type="date" />
-							<input bind:value={end.time} type="time" />
-						</td>
-					</tr>
-				</tbody>
-			</table>
-		</div>
-	</Tabs.Tab>
-</Tabs>
+<div class="content">
+	Summary ID
+	<input bind:value={summary_id} type="text" />
+</div>
+<hr style="margin: 0 1em;">
+<div class="content">
+	<table>
+		<thead>
+			<th>Start Time</th>
+			<th></th>
+			<th>End Time</th>
+		</thead>
+		<tbody>
+			<tr>
+				<td>
+					<input bind:value={start.date} type="date" />
+					<input bind:value={start.time} type="time" />
+				</td>
+				<td><Button on:click={COPY}>Copy</Button></td>
+				<td>
+					<input bind:value={end.date} type="date" />
+					<input bind:value={end.time} type="time" />
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
 <div style="padding: 0.5em;">
 	<Button on:click={SEARCH}>Search</Button>
-	<div class="programs">
+	<div class="programs" style="margin-top: 3em;">
 		<div class="title">Programs</div>
 	</div>
 </div>
@@ -85,11 +80,7 @@
 	.content {
 		padding: 1em;
 	}
-	.programs {
-		/* padding: 0; */
-		& .title {
-			font-size: 0.1em;
-			font-weight: bold;
-		}
+	.title {
+		font-size: 2em;
 	}
 </style>
