@@ -28,12 +28,12 @@
 		align-items: stretch;
 		height: 100%;
 		width: 100%;
-		& .bottom {
-			padding: 0.5em;
-			grid-column: span 2;
-		}
-		& .right {
-			padding: 1em;
-		}
+	}
+	.container .bottom {
+		padding: 0.5em;
+		grid-column: span 2;
+	}
+	.container .right {
+		padding: 1em;
 	}
 </style>
