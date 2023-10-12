@@ -160,22 +160,22 @@
 		align-content: center;
 		display: flex;
 		flex-direction: column;
-		& .menu {
-			cursor: pointer;
-			height: 3em;
-			margin: 1em;
-			text-align: center;
-			transition-property: transform;
-			transition-duration: 0.2s;
-			&:hover {
-				transform: scale(1.2);
-			}
-			& .text {
-				font-size: 0.9em;
-				font-weight: bold;
-				text-transform: uppercase;
-			}
-		}
+	}
+	.vertical-sidebar .menu {
+		cursor: pointer;
+		height: 3em;
+		margin: 1em;
+		text-align: center;
+		transition-property: transform;
+		transition-duration: 0.2s;
+	}
+	.vertical-sidebar .menu:hover {
+		transform: scale(1.2);
+	}
+	.vertical-sidebar .menu .text {
+		font-size: 0.9em;
+		font-weight: bold;
+		text-transform: uppercase;
 	}
 	a.accordion {
 		display: block;
@@ -193,8 +193,8 @@
 		transform: translateX(-100%);
 		transition: transform;
 		transition-duration: 0.3s;
-		&.show {
-			transform: translateX(0);
-		}
+	}
+	.navigator.show {
+		transform: translateX(0);
 	}
 </style>
