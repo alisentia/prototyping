@@ -22,10 +22,10 @@
 </script>
 
 <Tabs bind:active on:change={CHANGE_ACTIVE}>
-    <Tabs.Tab label="Summary ID" tabKey="s">
+    <Tabs.Tab label="Search" tabKey="s">
 		<Search />
 	</Tabs.Tab>
-    <Tabs.Tab label="Time" tabKey="t">
+    <Tabs.Tab label="Video" tabKey="v">
 		<Video />
 	</Tabs.Tab>
 </Tabs>
