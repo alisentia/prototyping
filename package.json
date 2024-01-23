@@ -12,8 +12,11 @@
     "lint": "eslint ."
   },
   "devDependencies": {
+    "@carbon/charts": "^1.13.23",
     "@carbon/charts-svelte": "^1.13.4",
+    "@carbon/styles": "^1.48.1",
     "@google-web-components/google-chart": "^5.0.5",
+    "@observablehq/plot": "^0.6.13",
     "@sveltejs/adapter-auto": "^2.0.0",
     "@sveltejs/adapter-static": "^2.0.3",
     "@sveltejs/kit": "^1.20.4",
